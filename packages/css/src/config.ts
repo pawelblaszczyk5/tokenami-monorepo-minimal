@@ -130,6 +130,7 @@ export const config = createConfig({
 	grid: "0.25rem",
 	include: [],
 	properties: {
+		aaaaaa: ["color"],
 		"accent-color": ["color"],
 		animation: ["anim"],
 		"animation-timing-function": ["ease"],
