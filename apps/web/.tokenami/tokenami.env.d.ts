@@ -8,5 +8,6 @@ declare module "@tokenami/dev" {
 	interface TokenamiConfig extends Config {
 		CI: false;
 	}
+	// prettier-ignore
 	interface TokenamiProperties extends TokenProperties<'aaaaaa'> {}
 }
