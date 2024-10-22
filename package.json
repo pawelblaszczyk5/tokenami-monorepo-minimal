@@ -1,0 +1,53 @@
+{
+	"name": "@repo/root",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "turbo run build",
+		"ci": "turbo run build lint typecheck sort-package-json spellcheck format --continue",
+		"dev": "turbo watch dev",
+		"format": "prettier \".\" --check",
+		"format:fix": "prettier \".\" --write",
+		"lint": "turbo run lint",
+		"lint:fix": "turbo run lint:fix",
+		"sort-package-json": "sort-package-json \"package.json\" \"{packages,tooling,apps}/*/package.json\" --check",
+		"sort-package-json:fix": "sort-package-json \"package.json\" \"{packages,tooling,apps}/*/package.json\"",
+		"spellcheck": "cspell \"**\" --no-progress --show-context --show-suggestions",
+		"typecheck": "turbo run typecheck",
+		"update-dependencies": "taze major --write --interactive --recursive --includeLocked --force"
+	},
+	"devDependencies": {
+		"cspell": "^8.15.2",
+		"prettier": "^3.3.3",
+		"sort-package-json": "^2.10.1",
+		"taze": "^0.17.2",
+		"turbo": "2.1.3",
+		"typescript": "catalog:"
+	},
+	"packageManager": "pnpm@9.12.1",
+	"engines": {
+		"node": "22.9.0",
+		"pnpm": "9.12.1"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"allowedVersions": {
+				"eslint": "9.12.0"
+			}
+		},
+		"allowedDeprecatedVersions": {
+			"@babel/plugin-proposal-private-methods": "7.18.6"
+		},
+		"allowNonAppliedPatches": false,
+		"overrides": {
+			"@types/react": "catalog:",
+			"@types/react-dom": "catalog:",
+			"react": "catalog:",
+			"react-dom": "catalog:"
+		},
+		"patchedDependencies": {
+			"eslint-plugin-import-x": "patches/eslint-plugin-import-x.patch"
+		}
+	}
+}

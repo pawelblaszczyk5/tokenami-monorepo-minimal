@@ -1,0 +1,43 @@
+{
+	"name": "@repo/web",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Web application",
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix vite:build",
+		"dev": "pnpm run generate-stylesheet --watch & remix vite:dev",
+		"generate-stylesheet": "tokenami --output ./app/styles.css",
+		"lint": "eslint",
+		"lint:fix": "eslint --fix",
+		"preview": "remix-serve ./build/server/index.js",
+		"typecheck": "sed -i '' 's/CI: false/CI: true/' .tokenami/tokenami.env.d.ts; exit_code=0; tsc --build || exit_code=$?; sed -i '' 's/CI: true/CI: false/' .tokenami/tokenami.env.d.ts; exit $exit_code"
+	},
+	"dependencies": {
+		"@repo/css": "workspace:0.0.1",
+		"@repo/design-system": "workspace:0.0.1",
+		"@remix-run/node": "catalog:",
+		"@remix-run/react": "catalog:",
+		"@remix-run/serve": "catalog:",
+		"@tokenami/css": "catalog:",
+		"isbot": "^5.1.17",
+		"react": "catalog:",
+		"react-dom": "catalog:"
+	},
+	"devDependencies": {
+		"@babel/preset-typescript": "^7.25.7",
+		"@repo/eslint-config": "workspace:0.0.1",
+		"@repo/typescript-config": "workspace:0.0.1",
+		"@remix-run/dev": "catalog:",
+		"@tokenami/dev": "catalog:",
+		"@tokenami/ts-plugin": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"babel-plugin-react-compiler": "0.0.0-experimental-ad3b12a-20241011",
+		"typescript": "catalog:",
+		"vite": "^5.4.9",
+		"vite-plugin-babel": "^1.2.0"
+	}
+}

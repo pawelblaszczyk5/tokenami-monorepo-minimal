@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# testing
+coverage/
+
+# artifacts
+.turbo/
+build/
+
+# misc
+.DS_Store
+*.pem
+pnpm-debug.log*
+
+# env files
+.env
+
+# apps/web specific
+/apps/web/app/styles.css

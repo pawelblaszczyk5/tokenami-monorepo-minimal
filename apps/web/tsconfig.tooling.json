@@ -1,0 +1,7 @@
+{
+	"extends": "@repo/typescript-config/node-no-build",
+	"compilerOptions": {
+		"module": "Preserve"
+	},
+	"include": ["vite.config.ts"]
+}
